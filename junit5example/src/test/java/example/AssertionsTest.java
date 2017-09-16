@@ -19,7 +19,7 @@ public class AssertionsTest {
 
     /**
      * new assertAll method allows us to pass multiple assertions to run in a group. We get a report
-     * on all failures (no short circuiting like normal, stops on first error)
+     * on all failures (no short circuiting like normal, where it stops on first error)
      */
     @Test
     @DisplayName("Grouped assertions")
