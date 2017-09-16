@@ -19,15 +19,21 @@ public class AssumptionsTest {
         );
     }
 
+    /**
+     * assumeTrue will only continue with the rest of the test if the assumption is true, otherwise
+     * it is reported as ignored, not failed
+     */
     @ParameterizedTest
     @MethodSource("transports")
     public void assumingTrue(Transport transport) {
-        // Will continue with the rest of the test if the below assumption is true
         assumeTrue(TransportType.BIKE.equals(transport.getTransportType()), () -> "Not a bike!");
         assertEquals(2, transport.getWheels());
         assertNotNull(transport);
     }
 
+    /**
+     * assumingThat will only run the contents of the assumption if true
+     */
     @ParameterizedTest
     @MethodSource("transports")
     public void assumeThat(Transport transport) {

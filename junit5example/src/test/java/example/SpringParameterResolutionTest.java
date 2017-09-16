@@ -14,6 +14,11 @@ import static org.junit.Assert.assertTrue;
 @SpringBootTest(classes = Application.class)
 public class SpringParameterResolutionTest {
 
+    /**
+     * parameter resolution also east with spring using the spring extension
+     * also note you can extend with multiple classes to provide different config
+     * and parameter resolution
+     */
     @Test
     @DisplayName("Should validate new car")
     public void validateNewCarTest(@Autowired CarValidator carValidator, Car car) {

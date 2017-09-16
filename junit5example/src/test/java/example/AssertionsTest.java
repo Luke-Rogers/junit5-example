@@ -7,12 +7,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AssertionsTest {
 
+    /**
+     * Assertion messages are now the first parameter instead of the last
+     */
     @Test
     @DisplayName("Simple addition test")
     public void mathAddTest() {
         assertEquals(3, 1 + 2, "Assertion message");
     }
 
+
+    /**
+     * new assertAll method allows us to pass multiple assertions to run in a group. We get a report
+     * on all failures (no short circuiting like normal, stops on first error)
+     */
     @Test
     @DisplayName("Grouped assertions")
     void groupedAssertions() {
@@ -24,6 +32,9 @@ public class AssertionsTest {
         );
     }
 
+    /**
+     * can also use the assertAll functionality to nest assertions that may be dependent
+     */
     @Test
     @DisplayName("Dependent assertions")
     void dependentAssertions() {

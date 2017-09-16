@@ -10,6 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DynamicTests {
 
+    /**
+     * we can now create tests at runtime be annotating method with @TestFactory
+     * and returning some dynamic tests
+     */
     @TestFactory
     public Stream<DynamicTest> dynamicTests() {
         // Generates tests for the first 10 even integers.

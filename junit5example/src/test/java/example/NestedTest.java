@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * BDD style tests
+ * we can now do BDD style nested testing with the @Nested annotation
  */
 public class NestedTest {
 

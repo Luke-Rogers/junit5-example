@@ -9,6 +9,10 @@ public class ExceptionTest {
 
     String exceptionMessage = "Some message";
 
+    /**
+     * new assertThrows now returns us the exception in a much cleaner way than before with JUnit 4
+     * see junit4example exceptions test for comparison
+     */
     @Test
     void assertException() {
         RuntimeException exception = assertThrows(RuntimeException.class, () -> {

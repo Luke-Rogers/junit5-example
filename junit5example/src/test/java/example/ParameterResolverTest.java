@@ -11,6 +11,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ParameterResolverTest {
 
+
+    /**
+     * we can extend classes or specific tests with parameter resolvers the will
+     * allow the methods args to be resolved
+     */
     @Test
     @DisplayName("should be new car")
     @ExtendWith(NewCarParameterResolver.class)

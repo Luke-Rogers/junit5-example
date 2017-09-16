@@ -29,12 +29,19 @@ public class ParametersTest {
         fizzBuzz = new FizzBuzz();
     }
 
+    /**
+     * we can provide the method args using a inline value source
+     */
     @ParameterizedTest
     @ValueSource(ints = {15, 45})
     void fizzBuzzers(int number) {
         assertEquals("FizzBuzz", fizzBuzz.fizzBuzz(number));
     }
 
+    /**
+     * we can provide the method args using a inline csv source, its also possible to use
+     * csv file
+     */
     @ParameterizedTest
     @CsvSource({"1, ", "10, Buzz", "45, FizzBuzz", "9, Fizz"})
     @DisplayName("example.FizzBuzz Tester")
@@ -42,6 +49,9 @@ public class ParametersTest {
         assertEquals(testResult, fizzBuzz.fizzBuzz(number));
     }
 
+    /**
+     * we can provide the method args using a method source
+     */
     @ParameterizedTest
     @MethodSource("fizzBuzzSource")
     @DisplayName("FizzBuzz Tester")
@@ -49,6 +59,9 @@ public class ParametersTest {
         assertEquals(testResult, fizzBuzz.fizzBuzz(number));
     }
 
+    /**
+     * we can provide the method args using an arguments source class
+     */
     @ParameterizedTest
     @ArgumentsSource(FizzBuzzArgumentsSource.class)
     @DisplayName("FizzBuzz Tester")
